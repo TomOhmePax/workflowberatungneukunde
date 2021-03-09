@@ -36,6 +36,15 @@
         "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "sap-erp",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "sap-erp"
     }
   ],
   "sendWelcomeFileRedirect": true

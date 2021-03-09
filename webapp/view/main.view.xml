@@ -1,0 +1,141 @@
+<mvc:View
+	controllerName="pax.workflowberatungneukunde.controller.main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+		<f:DynamicPage id="page" class="sapUiContentPadding">
+				<f:title>
+					<f:DynamicPageTitle>
+						<f:heading>
+							<Title text="{i18n>title}"/>
+						</f:heading>
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:content>
+					<form:Form id="form" title="{i18n>form_title}" editable="true">
+						<form:toolbar>
+							<Toolbar id="TB1">
+								<Title id="toolbar_title" text="{i18n>form_title}"/>
+								<ToolbarSpacer />
+								<Button 
+									id="btnResetForm"
+									icon=""
+									text="{i18n>button_reset}"
+									type="Transparent"
+									tooltip="{i18n>tooltip_reset}"
+									enabled="true"
+									press="onResetFormData"/>
+								<Button 
+									id="btnSend"
+									icon=""
+									text="{i18n>button_send}"
+									type="Emphasized"
+									tooltip="{i18n>tooltip_senden}"
+									enabled="true"
+									press="onSendFormData"/>
+							</Toolbar>
+						</form:toolbar>
+						<form:layout>
+							<form:ResponsiveGridLayout
+								labelSpanXL="4"
+								labelSpanL="3"
+								labelSpanM="4"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="0"
+								emptySpanL="4"
+								emptySpanM="0"
+								emptySpanS="0"
+								columnsXL="2"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</form:layout>
+						<form:formContainers>
+							<form:FormContainer>
+								<form:FormElement label="{i18n>form_label_name}">
+									<form:fields>
+										<Input id="input_name" value="{form>/nn}" placeholder="{i18n>form_placeholder_name}" required="true"/>
+									</form:fields>
+								</form:FormElement>
+								<form:FormElement label="{i18n>form_label_vorname}">
+									<form:fields>
+										<Input id="input_vorname" value="{form>/vn}" placeholder="{i18n>form_placeholder_vorname}" required="true"/>
+									</form:fields>
+								</form:FormElement>
+								<form:FormElement label="{i18n>form_label_sprache}">
+									<form:fields>
+										<ComboBox id="input_sprache" items="{inputValuesModel>/sprasEntries}" selectionChange="onSprasChange"
+													placeholder="{i18n>form_placeholder_sprache}" required="true">
+											<layoutData>
+												<l:GridData span="XL2 L3 M4 S5" />
+											</layoutData>
+											<items>
+												<Item xmlns="sap.ui.core" key="{inputValuesModel>key}" text="{inputValuesModel>key} - {inputValuesModel>value}" />
+											</items>
+										</ComboBox>
+										<!--
+										<MultiInput id="input_sprache" value="{form>/spras}" placeholder="{i18n>form_placeholder_sprache}" required="true" suggestionItems="{inputValuesModel>/sprasEntries}">
+											<layoutData>
+												<l:GridData span="XL2 L3 M4 S5" />
+											</layoutData>
+											<core:Item key="{key}" text="{value}" />
+										</MultiInput>
+										-->
+										<!--
+										<Input id="input_sprache" value="{form>/spras}" placeholder="{i18n>form_placeholder_sprache}" required="true">
+											<layoutData>
+												<l:GridData span="XL2 L3 M4 S5" />
+											</layoutData>
+										</Input>
+										-->
+									</form:fields>
+								</form:FormElement>
+								<form:FormElement label="{i18n>form_label_strasse_haus}">
+									<form:fields>
+										<Input id="input_strasse" value="{form>/str}" placeholder="{i18n>form_placeholder_strasse}"/>
+										<Input id="input_hausno" value="{form>/hno}" placeholder="{i18n>form_placeholder_hausnr}">
+											<layoutData>
+												<l:GridData span="XL2 L1 M3 S4" />
+											</layoutData>
+										</Input>
+									</form:fields>
+								</form:FormElement>
+								
+								<form:FormElement label="{i18n>form_label_ortland}">
+									<form:fields>
+										<MaskInput id="input_plz" value="{form>/plz}" mask="9999" placeholderSymbol="_" placeholder="{i18n>form_placeholder_plz}">
+											<layoutData>
+												<l:GridData span="XL2 L1 M3 S4" />
+											</layoutData>
+										</MaskInput>
+										<Input id="input_ort" value="{form>/ort}" placeholder="{i18n>form_placeholder_ort}"/>
+										<Input id="input_land" value="{form>/land}" placeholder="{i18n>form_placeholder_land}"/>
+									</form:fields>
+								</form:FormElement>
+								
+								<form:FormElement label="{i18n>form_label_emailtel}">
+									<form:fields>
+										<Input id="input_email" value="{form>/email}" placeholder="{i18n>form_placeholder_email}" required="true"/>
+										<Input id="input_telefon" value="{form>/tel}" placeholder="{i18n>form_placeholder_telefon}"/>
+									</form:fields>
+								</form:FormElement>
+								<form:FormElement label="{i18n>form_label_kundenanliegen}">
+									<form:fields>
+										<TextArea id="input_kundenanliegen" value="{form>/notiz}" placeholder="{i18n>form_placeholder_kundenanliegen}" growing="true" growingMaxLines="10" required="true"/>
+									</form:fields>
+								</form:FormElement>
+							</form:FormContainer>
+						</form:formContainers>
+					</form:Form>	
+				</f:content>
+			</f:DynamicPage>
+		</App>
+	</Shell>
+</mvc:View>

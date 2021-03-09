@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"workflowberatungneukunde/workflowberatungneukunde/model/models"
+	"pax/workflowberatungneukunde/model/models"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("workflowberatungneukunde.workflowberatungneukunde.Component", {
+	return UIComponent.extend("pax.workflowberatungneukunde.Component", {
 
 		metadata: {
 			manifest: "json"

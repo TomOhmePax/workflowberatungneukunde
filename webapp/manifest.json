@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "workflowberatungneukunde.workflowberatungneukunde",
+		"id": "pax.workflowberatungneukunde",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -12,9 +12,17 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
+		},
+		"dataSources": {
+			"WORKFLOW_REPORTING_SRV": {
+				"uri": "/sap/opu/odata/pax/WORKFLOW_REPORTING_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/WORKFLOW_REPORTING_SRV/metadata.xml"
+				}
+			}
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -31,14 +39,13 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "workflowberatungneukunde.workflowberatungneukunde.view.workflowberatungneukunde",
+			"viewName": "pax.workflowberatungneukunde.view.main",
 			"type": "XML",
 			"async": true,
-			"id": "workflowberatungneukunde"
+			"id": "pax.workflowberatungneukunde"
 		},
 		"dependencies": {
 			"minUI5Version": "1.65.6",
@@ -56,39 +63,49 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "workflowberatungneukunde.workflowberatungneukunde.i18n.i18n"
+					"bundleName": "pax.workflowberatungneukunde.i18n.i18n"
 				}
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "workflowberatungneukunde.workflowberatungneukunde.view",
+				"viewPath": "pax.workflowberatungneukunde.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "Routeworkflowberatungneukunde",
-				"pattern": "Routeworkflowberatungneukunde",
-				"target": ["Targetworkflowberatungneukunde"]
-			}],
+			"routes": [
+				{
+					"name": "Routeworkflowberatungneukunde",
+					"pattern": "Routeworkflowberatungneukunde",
+					"target": [
+						"Targetworkflowberatungneukunde"
+					]
+				}
+			],
 			"targets": {
 				"Targetworkflowberatungneukunde": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
-					"viewId": "workflowberatungneukunde",
-					"viewName": "workflowberatungneukunde"
+					"viewId": "main",
+					"viewName": "main"
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
