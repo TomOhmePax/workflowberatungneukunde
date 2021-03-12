@@ -11,7 +11,7 @@
 		<App id="app">
 		<f:DynamicPage id="page" class="sapUiContentPadding">
 				<f:title>
-					<f:DynamicPageTitle>
+					<f:DynamicPageTitle visible="{UI>/headerVisible}">
 						<f:heading>
 							<Title text="{i18n>title}"/>
 						</f:heading>
@@ -80,21 +80,6 @@
 												<Item xmlns="sap.ui.core" key="{inputValuesModel>key}" text="{inputValuesModel>key} - {inputValuesModel>value}" />
 											</items>
 										</ComboBox>
-										<!--
-										<MultiInput id="input_sprache" value="{form>/spras}" placeholder="{i18n>form_placeholder_sprache}" required="true" suggestionItems="{inputValuesModel>/sprasEntries}">
-											<layoutData>
-												<l:GridData span="XL2 L3 M4 S5" />
-											</layoutData>
-											<core:Item key="{key}" text="{value}" />
-										</MultiInput>
-										-->
-										<!--
-										<Input id="input_sprache" value="{form>/spras}" placeholder="{i18n>form_placeholder_sprache}" required="true">
-											<layoutData>
-												<l:GridData span="XL2 L3 M4 S5" />
-											</layoutData>
-										</Input>
-										-->
 									</form:fields>
 								</form:FormElement>
 								<form:FormElement label="{i18n>form_label_strasse_haus}">

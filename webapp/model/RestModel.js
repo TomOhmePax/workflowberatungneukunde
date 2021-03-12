@@ -15,11 +15,9 @@ sap.ui.define([
 		
 		startWorflow: function(oFormData) { 
 			return new Promise(function (resolve, reject) {
-				console.debug(oFormData);
 				sap.ui.core.BusyIndicator.show(0);
 				var sJson = encodeURI(JSON.stringify(oFormData));
-				var sUrl = baseUrl + "workflowsStart?input='" + sJson + "'";
-				
+				var sUrl = baseUrl + "workflowStart?input='" + sJson + "'";
 				// Retrieve CSRF-Token for subsequent POST-Request
 				var sToken;
 				$.ajax({

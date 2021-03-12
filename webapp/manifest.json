@@ -65,6 +65,11 @@
 				"settings": {
 					"bundleName": "pax.workflowberatungneukunde.i18n.i18n"
 				}
+			},
+			"UI": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
 			}
 		},
 		"resources": {

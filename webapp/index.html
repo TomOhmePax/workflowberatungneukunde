@@ -16,5 +16,10 @@
 	</head>
 	<body class="sapUiBody">
 		<div data-sap-ui-component data-name="pax.workflowberatungneukunde" data-id="container" data-settings='{"id" : "pax.workflowberatungneukunde"}'></div>
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				window.standalone = true;
+			});
+		</script>
 	</body>
 </html>
